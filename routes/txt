@@ -1,0 +1,28 @@
+router.get("/", (req, res, next)=>{
+    res.status(200).json({
+        message: "we live!"
+    })
+})
+
+router.post("/", (req, res, next)=>{
+    const poduct = {
+        name: req.body.name,
+        price: req.body.price
+    }
+
+    const product = new product({
+        _id: new Mongoose.Types.ObjectId(),
+        name: req.body.name,
+        price: req.body.price
+    })
+    product.save().then(result =>{
+        console.log(result);
+    })
+    .catch(err  =>{
+        console.log(err)
+    })
+    res.send(201).json({
+        message: "yaneeeeeee",
+        createdProduct: product
+    })
+})

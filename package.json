@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.5"
+  },
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "Learning shiit",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "dev": "nodemon server"
+  },
+  "author": "",
+  "license": "ISC"
+}
