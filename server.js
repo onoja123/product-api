@@ -7,16 +7,17 @@ dotenv.config({ path: './config.env' })
 
 const DB = process.env.DATABASE.replace(
     'password',
-    process.env.password
+    process.env.DATABASE_PASSWORD
 )
 
-mongoose.connect(DB, ()=>{
-    useNewUrlParser: true
-}).then(()=>{
-    console.log("Db connetcted")
+mongoose.connect(DB, {
+    useNewUrlParser: true,
 })
+.then(()=>{
+    console.log("Db connected sucessfully")
+})
+const PORT = process.env.PORT || 3000
 
-
-server.listen(3000, (req, res)=> {
-    console.log("server running on port 3000")
+server.listen(PORT, ()=> {
+    console.log(`server running on port ${PORT}`)
 });

@@ -10,8 +10,8 @@ const order = require("./routes/orders")
 
 app.use(express.json())
 
-app.use("/products", product)
-app.use("/orders", order)
+app.use("/api/products", product)
+app.use("/api/orders", order)
 
 app.get("*", (req, res) =>{
     res.statusCode(404).json({
