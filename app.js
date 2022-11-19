@@ -12,12 +12,8 @@ app.use(express.json())
 
 app.use("/api/products", product)
 
-
-// app.get("*", (req, res) =>{
-//     res.statusCode(404).json({
-//         error: true,
-//         message: "Route doesnt exist"
-//     })
-// })
+app.use('*', (req, res, next) => {
+    next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+});
 
 module.exports = app;
